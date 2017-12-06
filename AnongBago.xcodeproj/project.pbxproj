@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC853B911FD877DB007FF6B1 /* AnongBagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B901FD877DB007FF6B1 /* AnongBagoTableViewCell.swift */; };
+		EC853B931FD87841007FF6B1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B921FD87841007FF6B1 /* Update.swift */; };
 		EC90250C1FD710AF00959909 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9025021FD710AE00959909 /* AnongBago.framework */; };
 		EC9025111FD710AF00959909 /* AnongBagoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025101FD710AF00959909 /* AnongBagoTests.swift */; };
 		EC9025131FD710AF00959909 /* AnongBago.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9025051FD710AE00959909 /* AnongBago.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC853B901FD877DB007FF6B1 /* AnongBagoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoTableViewCell.swift; sourceTree = "<group>"; };
+		EC853B921FD87841007FF6B1 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		EC9025021FD710AE00959909 /* AnongBago.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnongBago.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9025051FD710AE00959909 /* AnongBago.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnongBago.h; sourceTree = "<group>"; };
 		EC9025061FD710AE00959909 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				EC9025571FD7113E00959909 /* AnongBagoViewController.swift */,
+				EC853B901FD877DB007FF6B1 /* AnongBagoTableViewCell.swift */,
+				EC853B921FD87841007FF6B1 /* Update.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC853B931FD87841007FF6B1 /* Update.swift in Sources */,
+				EC853B911FD877DB007FF6B1 /* AnongBagoTableViewCell.swift in Sources */,
 				EC9025581FD7113E00959909 /* AnongBagoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

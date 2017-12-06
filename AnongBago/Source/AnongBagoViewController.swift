@@ -8,11 +8,6 @@
 
 import UIKit
 
-public struct Update {
-    let title: String
-    let description: String
-}
-
 open class AnongBagoViewController: UIViewController {
     
     lazy var tableView: UITableView = {
@@ -23,7 +18,7 @@ open class AnongBagoViewController: UIViewController {
     }()
     
     open var updates: [Update] = [] {
-        didSet{
+        didSet {
             
         }
     }
