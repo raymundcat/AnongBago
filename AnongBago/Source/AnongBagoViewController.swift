@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct Update {
+    let title: String
+    let description: String
+    
+}
+
 open class AnongBagoViewController: UIViewController {
     
 }

@@ -10,7 +10,7 @@ import UIKit
 import AnongBago
 
 class ViewController: UIViewController {
-
+    
     lazy var anongBagoViewController: AnongBagoViewController = {
         let vc = AnongBagoViewController()
         return vc
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Example"
     }
 }
 
