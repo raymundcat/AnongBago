@@ -15,6 +15,7 @@ open class AnongBagoViewController: UIViewController {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
+        collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
