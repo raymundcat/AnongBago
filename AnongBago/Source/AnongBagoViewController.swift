@@ -44,7 +44,8 @@ open class AnongBagoViewController: UIViewController {
     }
 }
 
-extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return updates.count
     }
@@ -54,7 +55,9 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
                                                   for: indexPath)
     }
     
-    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width)
+    }
 }
 
 class AnongBagoCollectionViewCell: UICollectionViewCell {
