@@ -8,6 +8,23 @@
 
 import UIKit
 
+open class AnongBagoManager {
+    open static let shared = AnongBagoManager()
+    
+    open var updates: [Update] = [] {
+        didSet {
+            
+        }
+    }
+    
+    open func showUpdates(forController viewController: UIViewController){
+        let anongBagoVC = AnongBagoViewController()
+        anongBagoVC.updates = updates
+        anongBagoVC.modalPresentationStyle = .overFullScreen
+        viewController.present(anongBagoVC, animated: true, completion: nil)
+    }
+}
+
 open class AnongBagoViewController: UIViewController {
     
     lazy var blurEffect: UIBlurEffect = {

@@ -10,21 +10,17 @@ import UIKit
 import AnongBago
 
 class ViewController: UIViewController {
-    
-    lazy var anongBagoViewController: AnongBagoViewController = {
-        let vc = AnongBagoViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        vc.updates = [Update(title: "lmao", description: "lol"),
-        Update(title: "lmao", description: "lol"),
-        Update(title: "lmao", description: "lol"),
-        Update(title: "lmao", description: "lol")]
-        return vc
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Example"
-        present(anongBagoViewController, animated: true, completion: nil)
+        
+        let manager = AnongBagoManager.shared
+        manager.updates = [Update(title: "lmao", description: "lol"),
+                           Update(title: "lmao", description: "lol"),
+                           Update(title: "lmao", description: "lol"),
+                           Update(title: "lmao", description: "lol")]
+        manager.showUpdates(forController: self)
     }
 }
 
