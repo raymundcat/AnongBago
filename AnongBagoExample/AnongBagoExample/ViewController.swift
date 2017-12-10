@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Example"
-        
+    }
+    
+    @IBAction func didPressLogin(_ sender: Any) {
         let manager = AnongBagoManager.shared
         manager.updates = [Update(title: "lmao", description: "lol"),
                            Update(title: "lmao", description: "lol"),

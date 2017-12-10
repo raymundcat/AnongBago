@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class AnongBagoManager {
+open class AnongBagoManager: AnongBagoViewControllerDelegate {
     open static let shared = AnongBagoManager()
     
     open var updates: [Update] = [] {
@@ -17,12 +17,26 @@ open class AnongBagoManager {
         }
     }
     
-    open func showUpdates(forController viewController: UIViewController){
+    var presentingViewController: UIViewController?
+    
+    open func showUpdates(forController viewController: UIViewController,
+                          completion: (() -> Void)? = nil){
+        presentingViewController = viewController
         let anongBagoVC = AnongBagoViewController()
         anongBagoVC.updates = updates
         anongBagoVC.modalPresentationStyle = .overFullScreen
+        anongBagoVC.modalTransitionStyle = .crossDissolve
+        anongBagoVC.delegate = self
         viewController.present(anongBagoVC, animated: true, completion: nil)
     }
+    
+    public func didPressDone() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+public protocol AnongBagoViewControllerDelegate: class {
+    func didPressDone()
 }
 
 open class AnongBagoViewController: UIViewController {
@@ -57,11 +71,20 @@ open class AnongBagoViewController: UIViewController {
         return pageControl
     }()
     
+    lazy var okButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("DONE", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
     open var updates: [Update] = [] {
         didSet {
             
         }
     }
+    
+    weak var delegate: AnongBagoViewControllerDelegate?
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +93,10 @@ open class AnongBagoViewController: UIViewController {
         view.addSubview(blurView)
         view.addSubview(collectionView)
         view.addSubview(pageControl)
+        view.addSubview(okButton)
+        
+        okButton.isHidden = true
+        okButton.addTarget(self, action: #selector(didPressDone(sender:)), for: .touchDown)
         
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -86,6 +113,14 @@ open class AnongBagoViewController: UIViewController {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        
+        okButton.translatesAutoresizingMaskIntoConstraints = false
+        okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        okButton.centerYAnchor.constraint(equalTo: pageControl.centerYAnchor).isActive = true
+    }
+    
+    @objc func didPressDone(sender: Any) {
+        delegate?.didPressDone()
     }
 }
 
@@ -111,8 +146,10 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.size.width
-        let page = floor((scrollView.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1
-        pageControl.currentPage = Int(page)
+        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1)
+        pageControl.currentPage = page
+        pageControl.isHidden = page + 1 == updates.count
+        okButton.isHidden = page + 1 != updates.count
     }
 }
 
