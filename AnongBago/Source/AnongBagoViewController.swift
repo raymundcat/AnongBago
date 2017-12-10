@@ -10,13 +10,21 @@ import UIKit
 
 open class AnongBagoViewController: UIViewController {
     
+    lazy var blurEffect: UIBlurEffect = {
+        return UIBlurEffect(style: .light)
+    }()
+    
+    lazy var blurView: UIVisualEffectView = {
+        return UIVisualEffectView(effect: blurEffect)
+    }()
+    
     static let reuseID = "cell"
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -33,8 +41,16 @@ open class AnongBagoViewController: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
+        
+        view.addSubview(blurView)
         view.addSubview(collectionView)
+        
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        blurView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        blurView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        blurView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -86,7 +102,7 @@ class AnongBagoCollectionViewCell: UICollectionViewCell {
         cardView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         cardView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
-        cardView.heightAnchor.constraint(equalTo: cardView.widthAnchor).isActive = true
+        cardView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
