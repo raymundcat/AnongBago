@@ -25,12 +25,19 @@ open class AnongBagoViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(AnongBagoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: AnongBagoViewController.reuseID)
         return collectionView
+    }()
+    
+    lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        return pageControl
     }()
     
     open var updates: [Update] = [] {
@@ -45,6 +52,7 @@ open class AnongBagoViewController: UIViewController {
         
         view.addSubview(blurView)
         view.addSubview(collectionView)
+        view.addSubview(pageControl)
         
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -57,12 +65,17 @@ open class AnongBagoViewController: UIViewController {
         collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
     }
 }
 
 extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pageControl.numberOfPages = updates.count
         return updates.count
     }
     
@@ -77,6 +90,12 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.size.width
+        let page = floor((scrollView.contentOffset.x - pageWidth / 2 ) / pageWidth) + 1
+        pageControl.currentPage = Int(page)
     }
 }
 
