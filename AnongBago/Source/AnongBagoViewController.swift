@@ -132,8 +132,9 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: AnongBagoViewController.reuseID,
-                                                  for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnongBagoViewController.reuseID,
+                                                      for: indexPath)
+        return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -153,32 +154,4 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
-class AnongBagoCollectionViewCell: UICollectionViewCell {
-    
-    lazy var cardView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.shadowRadius = 10
-        view.layer.shadowOpacity = 0.2
-        view.layer.shadowOffset = .zero
-        view.layer.masksToBounds = false
-        view.layer.shadowColor = UIColor.black.cgColor
-        return view
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        addSubview(cardView)
-        
-        cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        cardView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
-        cardView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+

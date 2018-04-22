@@ -9,11 +9,14 @@
 import Foundation
 
 public struct Update {
-    public let title: String
-    public let description: String
     
-    public init(title: String, description: String) {
+    public let title: String?
+    public let image: UIImage?
+    public let description: String?
+    
+    public init(title: String?, description: String?, image: UIImage?) {
         self.title = title
         self.description = description
+        self.image = image
     }
 }

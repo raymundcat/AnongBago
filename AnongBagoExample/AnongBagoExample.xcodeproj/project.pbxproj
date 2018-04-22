@@ -81,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				EC9025271FD710FA00959909 /* AnongBagoExample */,
-				EC90253C1FD710FA00959909 /* AnongBagoExampleTests */,
 				EC9025471FD710FA00959909 /* AnongBagoExampleUITests */,
 				EC9025261FD710FA00959909 /* Products */,
 				EC9025591FD7116F00959909 /* Frameworks */,
@@ -106,6 +105,7 @@
 				EC90252C1FD710FA00959909 /* Main.storyboard */,
 				EC90252F1FD710FA00959909 /* Assets.xcassets */,
 				EC9025311FD710FA00959909 /* LaunchScreen.storyboard */,
+				EC90253C1FD710FA00959909 /* AnongBagoExampleTests */,
 				EC9025341FD710FA00959909 /* Info.plist */,
 			);
 			path = AnongBagoExample;
