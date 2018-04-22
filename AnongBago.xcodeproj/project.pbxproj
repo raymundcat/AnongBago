@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EC5061EC208CBFD6005C063A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061EB208CBFD6005C063A /* CardView.swift */; };
 		EC5061EE208CC0ED005C063A /* AnongBagoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */; };
+		EC5061F2208CC82E005C063A /* AnongBagoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061F1208CC82E005C063A /* AnongBagoManager.swift */; };
 		EC853B931FD87841007FF6B1 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B921FD87841007FF6B1 /* Update.swift */; };
 		EC90250C1FD710AF00959909 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9025021FD710AE00959909 /* AnongBago.framework */; };
 		EC9025111FD710AF00959909 /* AnongBagoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025101FD710AF00959909 /* AnongBagoTests.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		EC5061EB208CBFD6005C063A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC5061F1208CC82E005C063A /* AnongBagoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoManager.swift; sourceTree = "<group>"; };
 		EC853B921FD87841007FF6B1 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		EC9025021FD710AE00959909 /* AnongBago.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnongBago.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9025051FD710AE00959909 /* AnongBago.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnongBago.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				EC5061EB208CBFD6005C063A /* CardView.swift */,
 				EC9025571FD7113E00959909 /* AnongBagoViewController.swift */,
 				EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */,
+				EC5061F1208CC82E005C063A /* AnongBagoManager.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				EC853B931FD87841007FF6B1 /* Update.swift in Sources */,
 				EC5061EE208CC0ED005C063A /* AnongBagoCollectionViewCell.swift in Sources */,
 				EC5061EC208CBFD6005C063A /* CardView.swift in Sources */,
+				EC5061F2208CC82E005C063A /* AnongBagoManager.swift in Sources */,
 				EC9025581FD7113E00959909 /* AnongBagoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

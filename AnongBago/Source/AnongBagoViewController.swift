@@ -8,33 +8,6 @@
 
 import UIKit
 
-open class AnongBagoManager: AnongBagoViewControllerDelegate {
-    open static let shared = AnongBagoManager()
-    
-    open var updates: [Update] = [] {
-        didSet {
-            
-        }
-    }
-    
-    var presentingViewController: UIViewController?
-    
-    open func showUpdates(forController viewController: UIViewController,
-                          completion: (() -> Void)? = nil){
-        presentingViewController = viewController
-        let anongBagoVC = AnongBagoViewController()
-        anongBagoVC.updates = updates
-        anongBagoVC.modalPresentationStyle = .overFullScreen
-        anongBagoVC.modalTransitionStyle = .crossDissolve
-        anongBagoVC.delegate = self
-        viewController.present(anongBagoVC, animated: true, completion: nil)
-    }
-    
-    public func didPressDone() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-}
-
 public protocol AnongBagoViewControllerDelegate: class {
     func didPressDone()
 }
@@ -153,5 +126,3 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
         okButton.isHidden = page + 1 != updates.count
     }
 }
-
-
