@@ -11,7 +11,7 @@ import Foundation
 open class AnongBagoManager: AnongBagoViewControllerDelegate {
     open static let shared = AnongBagoManager()
     
-    open var updates: [Update] = [] {
+    open var updates: [UpdateItem] = [] {
         didSet {
             
         }

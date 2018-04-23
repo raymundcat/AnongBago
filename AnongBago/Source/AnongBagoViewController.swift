@@ -51,7 +51,7 @@ open class AnongBagoViewController: UIViewController {
         return button
     }()
     
-    open var updates: [Update] = [] {
+    open var updates: [UpdateItem] = [] {
         didSet {
             
         }
@@ -108,6 +108,11 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnongBagoViewController.reuseID,
                                                       for: indexPath)
         return cell
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // enable animation?
+        // enable user to create multiple update type?
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct Update {
+public struct UpdateItem {
     
     public let title: String?
     public let image: UIImage?
     public let description: String?
     
-    public init(title: String?, description: String?, image: UIImage?) {
+    public init(title: String? = nil, description: String? = nil, image: UIImage? = nil) {
         self.title = title
         self.description = description
         self.image = image
