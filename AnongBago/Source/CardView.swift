@@ -13,7 +13,7 @@ class CardView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet"
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.textAlignment = .center
         label.textColor = .darkGray
         return label;
@@ -22,7 +22,7 @@ class CardView: UIView {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .darkGray
         return label;

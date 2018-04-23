@@ -8,15 +8,18 @@
 
 import Foundation
 
+public enum UpdateDescriptionType {
+    case simple(title: String, description: String)
+    case bulleted(title: String, descriptions:Array<String>)
+}
+
 public struct UpdateItem {
     
-    public let title: String?
     public let image: UIImage?
-    public let description: String?
+    public let descriptionType: UpdateDescriptionType
     
-    public init(title: String? = nil, description: String? = nil, image: UIImage? = nil) {
-        self.title = title
-        self.description = description
+    public init(descriptionType: UpdateDescriptionType, image: UIImage? = nil) {
+        self.descriptionType = descriptionType
         self.image = image
     }
 }

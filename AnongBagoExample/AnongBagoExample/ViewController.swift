@@ -13,11 +13,7 @@ class ViewController: UIViewController {
     
     @IBAction func didPressLogin(_ sender: Any) {
         let manager = AnongBagoManager.shared
-        manager.updates = [UpdateItem(title: "lmao", description: "lol", image: nil),
-                           UpdateItem(title: "lmao", description: "lol", image: nil),
-                           UpdateItem(title: "lmao", description: "lol", image: nil),
-                           UpdateItem(title: "lmao", description: "lol", image: nil),
-                           UpdateItem(title: "")]
+        manager.updates = [UpdateItem(descriptionType: .simple(title: "", description: ""))]
         manager.showUpdates(forController: self)
     }
 }
