@@ -15,7 +15,8 @@ class AnongBagoBulletCell: UITableViewCell {
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.textColor = .darkGray
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 15)
         return label;
     }()
     

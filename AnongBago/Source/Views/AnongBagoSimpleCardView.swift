@@ -13,9 +13,10 @@ class AnongBagoSimpleCardView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet"
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: 22)
         return label;
     }()
     
@@ -24,7 +25,8 @@ class AnongBagoSimpleCardView: UIView {
         label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.textColor = .darkGray
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 15)
         return label;
     }()
     
@@ -33,6 +35,9 @@ class AnongBagoSimpleCardView: UIView {
         imageView.backgroundColor = .lightGray
         return imageView;
     }()
+    
+    var iconHeightAnchorConstraint: NSLayoutConstraint?
+    var icon0HeightAnchorConstraint: NSLayoutConstraint?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,19 +52,27 @@ class AnongBagoSimpleCardView: UIView {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        iconImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+        icon0HeightAnchorConstraint = iconImageView.heightAnchor.constraint(equalToConstant: 0)
+        icon0HeightAnchorConstraint?.isActive = true
+        icon0HeightAnchorConstraint?.priority = .defaultLow
+        iconHeightAnchorConstraint = iconImageView.heightAnchor.constraint(equalTo: iconImageView.widthAnchor)
+        iconHeightAnchorConstraint?.isActive = true
+        iconHeightAnchorConstraint?.priority = .defaultHigh
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 8).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        descriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
+        descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -8).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
