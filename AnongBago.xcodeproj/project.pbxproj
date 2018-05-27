@@ -13,6 +13,7 @@
 		EC80351C20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80351B20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift */; };
 		EC80352220BB08A90031FEE0 /* AnongBagoBulletedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80352120BB08A90031FEE0 /* AnongBagoBulletedCardView.swift */; };
 		EC80352420BB16AA0031FEE0 /* AnongBagoBulletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80352320BB16AA0031FEE0 /* AnongBagoBulletCell.swift */; };
+		EC80352920BB2BA90031FEE0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC80352820BB2BA90031FEE0 /* Media.xcassets */; };
 		EC853B931FD87841007FF6B1 /* AnongBagoUpdateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B921FD87841007FF6B1 /* AnongBagoUpdateItem.swift */; };
 		EC90250C1FD710AF00959909 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9025021FD710AE00959909 /* AnongBago.framework */; };
 		EC9025111FD710AF00959909 /* AnongBagoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025101FD710AF00959909 /* AnongBagoTests.swift */; };
@@ -37,6 +38,7 @@
 		EC80351B20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletedCardCell.swift; sourceTree = "<group>"; };
 		EC80352120BB08A90031FEE0 /* AnongBagoBulletedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletedCardView.swift; sourceTree = "<group>"; };
 		EC80352320BB16AA0031FEE0 /* AnongBagoBulletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletCell.swift; sourceTree = "<group>"; };
+		EC80352820BB2BA90031FEE0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		EC853B921FD87841007FF6B1 /* AnongBagoUpdateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoUpdateItem.swift; sourceTree = "<group>"; };
 		EC9025021FD710AE00959909 /* AnongBago.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnongBago.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9025051FD710AE00959909 /* AnongBago.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnongBago.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				EC9025561FD7112700959909 /* Source */,
 				EC9025051FD710AE00959909 /* AnongBago.h */,
 				EC9025061FD710AE00959909 /* Info.plist */,
+				EC80352820BB2BA90031FEE0 /* Media.xcassets */,
 			);
 			path = AnongBago;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC80352920BB2BA90031FEE0 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@ class AnongBagoSimpleCardView: UIView {
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
+        imageView.image = UIImage(named: "bugfixIcon", in: Bundle(for: AnongBagoSimpleCardView.self), compatibleWith: nil)
         return imageView;
     }()
     
@@ -54,7 +54,7 @@ class AnongBagoSimpleCardView: UIView {
         
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
         iconImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
         icon0HeightAnchorConstraint = iconImageView.heightAnchor.constraint(equalToConstant: 0)
         icon0HeightAnchorConstraint?.isActive = true
@@ -64,7 +64,7 @@ class AnongBagoSimpleCardView: UIView {
         iconHeightAnchorConstraint?.priority = .defaultHigh
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 8).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 16).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         
