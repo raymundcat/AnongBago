@@ -22,7 +22,6 @@ open class AnongBagoViewController: UIViewController {
         return UIVisualEffectView(effect: blurEffect)
     }()
     
-    static let reuseID = "cell"
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -34,8 +33,12 @@ open class AnongBagoViewController: UIViewController {
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(AnongBagoCollectionViewCell.self,
-                                forCellWithReuseIdentifier: AnongBagoViewController.reuseID)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: String(describing: UICollectionViewCell.self))
+        collectionView.register(AnongBagoSimpleCardCell.self,
+                                forCellWithReuseIdentifier: String(describing: AnongBagoSimpleCardCell.self))
+        collectionView.register(AnongBagoBulletedCardCell.self,
+                                forCellWithReuseIdentifier: String(describing: AnongBagoBulletedCardCell.self))
         return collectionView
     }()
     
@@ -51,7 +54,7 @@ open class AnongBagoViewController: UIViewController {
         return button
     }()
     
-    open var updates: [UpdateItem] = [] {
+    open var updates: [AnongBagoUpdateItem] = [] {
         didSet {
             
         }
@@ -105,9 +108,21 @@ extension AnongBagoViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnongBagoViewController.reuseID,
-                                                      for: indexPath)
-        return cell
+        guard indexPath.row < updates.count else { return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: UICollectionViewCell.self), for: indexPath)}
+        let update = updates[indexPath.row]
+        
+        switch update.descriptionType {
+        case .simple(let title, let description):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AnongBagoSimpleCardCell.self),
+                                                          for: indexPath)
+            return cell
+        case .bulleted(let title, let descriptions):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AnongBagoBulletedCardCell.self),
+                                                          for: indexPath)
+            guard let bulletedCell = cell as? AnongBagoBulletedCardCell else { return cell }
+            bulletedCell.descriptions = descriptions
+            return bulletedCell
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

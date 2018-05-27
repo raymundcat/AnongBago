@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC5061EC208CBFD6005C063A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061EB208CBFD6005C063A /* CardView.swift */; };
-		EC5061EE208CC0ED005C063A /* AnongBagoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */; };
+		EC5061EC208CBFD6005C063A /* AnongBagoSimpleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061EB208CBFD6005C063A /* AnongBagoSimpleCardView.swift */; };
+		EC5061EE208CC0ED005C063A /* AnongBagoSimpleCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061ED208CC0ED005C063A /* AnongBagoSimpleCardCell.swift */; };
 		EC5061F2208CC82E005C063A /* AnongBagoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5061F1208CC82E005C063A /* AnongBagoManager.swift */; };
-		EC853B931FD87841007FF6B1 /* UpdateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B921FD87841007FF6B1 /* UpdateItem.swift */; };
+		EC80351C20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80351B20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift */; };
+		EC80352220BB08A90031FEE0 /* AnongBagoBulletedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80352120BB08A90031FEE0 /* AnongBagoBulletedCardView.swift */; };
+		EC80352420BB16AA0031FEE0 /* AnongBagoBulletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80352320BB16AA0031FEE0 /* AnongBagoBulletCell.swift */; };
+		EC853B931FD87841007FF6B1 /* AnongBagoUpdateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC853B921FD87841007FF6B1 /* AnongBagoUpdateItem.swift */; };
 		EC90250C1FD710AF00959909 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9025021FD710AE00959909 /* AnongBago.framework */; };
 		EC9025111FD710AF00959909 /* AnongBagoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025101FD710AF00959909 /* AnongBagoTests.swift */; };
 		EC9025131FD710AF00959909 /* AnongBago.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9025051FD710AE00959909 /* AnongBago.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,10 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC5061EB208CBFD6005C063A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC5061EB208CBFD6005C063A /* AnongBagoSimpleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoSimpleCardView.swift; sourceTree = "<group>"; };
+		EC5061ED208CC0ED005C063A /* AnongBagoSimpleCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoSimpleCardCell.swift; sourceTree = "<group>"; };
 		EC5061F1208CC82E005C063A /* AnongBagoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoManager.swift; sourceTree = "<group>"; };
-		EC853B921FD87841007FF6B1 /* UpdateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItem.swift; sourceTree = "<group>"; };
+		EC80351B20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletedCardCell.swift; sourceTree = "<group>"; };
+		EC80352120BB08A90031FEE0 /* AnongBagoBulletedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletedCardView.swift; sourceTree = "<group>"; };
+		EC80352320BB16AA0031FEE0 /* AnongBagoBulletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoBulletCell.swift; sourceTree = "<group>"; };
+		EC853B921FD87841007FF6B1 /* AnongBagoUpdateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnongBagoUpdateItem.swift; sourceTree = "<group>"; };
 		EC9025021FD710AE00959909 /* AnongBago.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnongBago.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9025051FD710AE00959909 /* AnongBago.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnongBago.h; sourceTree = "<group>"; };
 		EC9025061FD710AE00959909 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +66,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC80351D20BB080A0031FEE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC853B921FD87841007FF6B1 /* AnongBagoUpdateItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EC80351E20BB08170031FEE0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EC5061F1208CC82E005C063A /* AnongBagoManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		EC80351F20BB08230031FEE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC5061EB208CBFD6005C063A /* AnongBagoSimpleCardView.swift */,
+				EC80352120BB08A90031FEE0 /* AnongBagoBulletedCardView.swift */,
+				EC9025571FD7113E00959909 /* AnongBagoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC80352020BB085F0031FEE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC5061ED208CC0ED005C063A /* AnongBagoSimpleCardCell.swift */,
+				EC80351B20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift */,
+				EC80352320BB16AA0031FEE0 /* AnongBagoBulletCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EC9024F81FD710AE00959909 = {
 			isa = PBXGroup;
 			children = (
@@ -100,11 +142,10 @@
 		EC9025561FD7112700959909 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				EC853B921FD87841007FF6B1 /* UpdateItem.swift */,
-				EC5061EB208CBFD6005C063A /* CardView.swift */,
-				EC9025571FD7113E00959909 /* AnongBagoViewController.swift */,
-				EC5061ED208CC0ED005C063A /* AnongBagoCollectionViewCell.swift */,
-				EC5061F1208CC82E005C063A /* AnongBagoManager.swift */,
+				EC80352020BB085F0031FEE0 /* Cells */,
+				EC80351F20BB08230031FEE0 /* Views */,
+				EC80351E20BB08170031FEE0 /* Managers */,
+				EC80351D20BB080A0031FEE0 /* Models */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -220,11 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC853B931FD87841007FF6B1 /* UpdateItem.swift in Sources */,
-				EC5061EE208CC0ED005C063A /* AnongBagoCollectionViewCell.swift in Sources */,
-				EC5061EC208CBFD6005C063A /* CardView.swift in Sources */,
+				EC853B931FD87841007FF6B1 /* AnongBagoUpdateItem.swift in Sources */,
+				EC5061EE208CC0ED005C063A /* AnongBagoSimpleCardCell.swift in Sources */,
+				EC5061EC208CBFD6005C063A /* AnongBagoSimpleCardView.swift in Sources */,
+				EC80352220BB08A90031FEE0 /* AnongBagoBulletedCardView.swift in Sources */,
 				EC5061F2208CC82E005C063A /* AnongBagoManager.swift in Sources */,
 				EC9025581FD7113E00959909 /* AnongBagoViewController.swift in Sources */,
+				EC80351C20BB08000031FEE0 /* AnongBagoBulletedCardCell.swift in Sources */,
+				EC80352420BB16AA0031FEE0 /* AnongBagoBulletCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

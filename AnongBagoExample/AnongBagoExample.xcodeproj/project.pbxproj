@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC80351820BB06700031FEE0 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90255B1FD7116F00959909 /* AnongBago.framework */; };
+		EC80351920BB06700031FEE0 /* AnongBago.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC90255B1FD7116F00959909 /* AnongBago.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC9025291FD710FA00959909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025281FD710FA00959909 /* AppDelegate.swift */; };
 		EC90252B1FD710FA00959909 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC90252A1FD710FA00959909 /* ViewController.swift */; };
 		EC90252E1FD710FA00959909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC90252C1FD710FA00959909 /* Main.storyboard */; };
@@ -14,7 +16,6 @@
 		EC9025331FD710FA00959909 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9025311FD710FA00959909 /* LaunchScreen.storyboard */; };
 		EC90253E1FD710FA00959909 /* AnongBagoExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC90253D1FD710FA00959909 /* AnongBagoExampleTests.swift */; };
 		EC9025491FD710FA00959909 /* AnongBagoExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9025481FD710FA00959909 /* AnongBagoExampleUITests.swift */; };
-		EC90255A1FD7116F00959909 /* AnongBago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC90255B1FD7116F00959909 /* AnongBago.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,20 @@
 			remoteInfo = AnongBagoExample;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC80351A20BB06700031FEE0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC80351920BB06700031FEE0 /* AnongBago.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC9025251FD710FA00959909 /* AnongBagoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnongBagoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC90255A1FD7116F00959909 /* AnongBago.framework in Frameworks */,
+				EC80351820BB06700031FEE0 /* AnongBago.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +162,7 @@
 				EC9025211FD710FA00959909 /* Sources */,
 				EC9025221FD710FA00959909 /* Frameworks */,
 				EC9025231FD710FA00959909 /* Resources */,
+				EC80351A20BB06700031FEE0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -1,25 +1,29 @@
 //
-//  AnongBagoCollectionViewCell.swift
+//  AnongBagoBulletedCardCell.swift
 //  AnongBago
 //
-//  Created by John Raymund Catahay on 22/04/2018.
+//  Created by John Raymund Catahay on 27/05/2018.
 //  Copyright © 2018 John Raymund Catahay. All rights reserved.
 //
 
 import UIKit
 
-class AnongBagoCollectionViewCell: UICollectionViewCell {
+class AnongBagoBulletedCardCell: UICollectionViewCell {
     
-    lazy var cardView: CardView = {
-        let view = CardView()
+    lazy var cardView: AnongBagoBulletedCardView = {
+        let view = AnongBagoBulletedCardView()
         return view
     }()
     
+    var descriptions: [String] = [] {
+        didSet {
+            cardView.descriptions = descriptions
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(cardView)
-        
         cardView.translatesAutoresizingMaskIntoConstraints = false
         cardView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

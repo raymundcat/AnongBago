@@ -13,7 +13,12 @@ public enum UpdateDescriptionType {
     case bulleted(title: String, descriptions:Array<String>)
 }
 
-public struct UpdateItem {
+public protocol AnongBagoUpdatable {
+    var image: UIImage? { get }
+    var descriptionType: UpdateDescriptionType { get }
+}
+
+public struct AnongBagoUpdateItem: AnongBagoUpdatable {
     
     public let image: UIImage?
     public let descriptionType: UpdateDescriptionType

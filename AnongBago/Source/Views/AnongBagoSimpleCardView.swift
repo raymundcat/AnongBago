@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardView: UIView {
+class AnongBagoSimpleCardView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -30,6 +30,7 @@ class CardView: UIView {
     
     let iconImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .lightGray
         return imageView;
     }()
 
