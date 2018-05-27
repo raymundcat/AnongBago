@@ -12,7 +12,7 @@ class AnongBagoBulletCell: UITableViewCell {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        label.text = "• Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textColor = .lightGray
@@ -24,8 +24,8 @@ class AnongBagoBulletCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor , constant: -8).isActive = true
     }

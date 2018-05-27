@@ -12,7 +12,7 @@ class AnongBagoBulletedCardView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet"
+        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .darkGray

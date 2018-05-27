@@ -12,7 +12,7 @@ class AnongBagoSimpleCardView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet"
+        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .darkGray
@@ -69,8 +69,8 @@ class AnongBagoSimpleCardView: UIView {
         titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -8).isActive = true
     }
